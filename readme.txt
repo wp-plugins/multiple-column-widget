@@ -49,6 +49,9 @@ Yes. We do accept donation.
 * User are now able to choose any posts which was previously created to be put inside the widget, not just the widget's specific post type
 * shortcode is also availabel in case user wants to put the widget inside page or post
 
+= 1.1.5 =
+* fix fix initial widget create javascript link binding
+
 == Upgrade Notice ==
 
 = 1.0 =

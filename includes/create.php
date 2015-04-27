@@ -31,7 +31,7 @@ function mcw_print_script(){
 			for( var i=0;i<tv;i++ ){
 				var x = '<p><a href="#" class="set-post">Set Post</a><br />Post: <span class="setted-post">None</span></p>',
 				classString = 'mcw-lg-'+separator+' mcw-md-'+separator+' mcw-sm-'+separator+' mcw-xs-12';
-				$('#sampel-output').append( x ).children(':last').wrap('<div class="'+classString+'" />').wrap('<div class="mcw-p5" />');
+				$('#sampel-output').append( x ).children(':last').wrap('<div class="'+classString+'" />').wrap('<div class="mcw-p5" />').parent().after('<div class="mcw-p10" style="display:none;"><input type="hidden" name="selected-post[]" class="select-post" value="" /></div>');
 			}
 
 			$('#sampel-output').find('.mcw-p5').each(function(i,e){
@@ -79,7 +79,7 @@ function mcw_print_script(){
 		$.fn.bindSelectPost = function(){
 			var t = $(this);
 
-			t.click(function(){
+			t.find('a').click(function(){
 				t.hide();
 				t.next().show().append( $('#main-post-list').show() );
 				return false;
