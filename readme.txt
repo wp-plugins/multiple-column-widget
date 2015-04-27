@@ -1,5 +1,5 @@
 === Multiple Column Widget ===
-Contributors: system@damakhijau.com,sanusi87@gmail.com
+Contributors: system@damakhijau.com,sanusi87@gmail.com, damaksystem@gmail.com
 Author URI: http://system.damakhijau.com
 Plugin URL: http://system.damakhijau.com/multiple-column-widget/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KWTZTPV9JRLD8&item_name=multicolumnwidget&item_number=multic
@@ -14,7 +14,7 @@ You will be able to put a list of posts in a single row
 
 == Description ==
 
-This widget helps you to put posts (defined by this widget) in a row. The width for each post will be divided evenly with the total number of post you have selected during the creation of widget.
+This widget helps you to put posts in a row. The width for each post will be divided evenly with the total number of post you have selected during the creation of widget.
 
 == Installation ==
 
@@ -44,6 +44,13 @@ Yes. We do accept donation.
 
 = 1.0 =
 * First commit
+
+= 1.1 = 
+* User are now able to choose any posts which was previously created to be put inside the widget, not just the widget's specific post type
+* shortcode is also availabel in case user wants to put the widget inside page or post
+
+= 1.1.5 =
+* fix fix initial widget create javascript link binding
 
 == Upgrade Notice ==
 
