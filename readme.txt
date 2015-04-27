@@ -4,9 +4,9 @@ Author URI: http://system.damakhijau.com
 Plugin URL: http://system.damakhijau.com/multiple-column-widget/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KWTZTPV9JRLD8&item_name=multicolumnwidget&item_number=multic
 Tags: multiple column, widget
-Requires at least: 3.4
-Tested up to: 3.4
-Stable tag: 4.3
+Requires at least: 3.9
+Tested up to: 3.9
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,9 @@ Yes. We do accept donation.
 * shortcode is also availabel in case user wants to put the widget inside page or post
 
 = 1.1.5 =
+* fix fix initial widget create javascript link binding
+
+= 1.1.6 =
 * fix fix initial widget create javascript link binding
 
 == Upgrade Notice ==
