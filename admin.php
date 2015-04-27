@@ -8,7 +8,6 @@
 	Author URI: http://visitmeifyoulike.blogspot.com/
 */
 
-	//require_once( MULTIC_PLUGIN_DIR.'multi_column_widget.php' );
 	require_once( MULTIC_PLUGIN_DIR.'class/MultiColumnWidget.php' );
 	require_once( MULTIC_PLUGIN_DIR.'class/MultiColumnWidgetPage.php' );
 	require_once( MULTIC_PLUGIN_DIR.'class/MultiColumnWidgetDb.php' );
