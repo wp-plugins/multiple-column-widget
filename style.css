@@ -1,0 +1,111 @@
+/*
+	Plugin Name: Multiple Column Widget
+	Plugin URI: http://www.sanusiyaakub.org
+	Description: You will be able to put a list of posts in a single row
+	Author: Sanusi Yaakub (sanusi87@gmail.com)
+	Version: 0.1
+	Author URI: http://visitmeifyoulike.blogspot.com/
+*/
+
+.mb-15{ margin-bottom: 15px; }
+.mb-10{ margin-bottom: 10px; }
+.mb-5{ margin-bottom: 5px; }
+
+.mt-15{ margin-top: 15px; }
+.mt-10{ margin-top: 10px; }
+.mt-5{ margin-top: 5px; }
+
+.mcw-m10{ margin: 10px; }
+.mcw-m5{ margin: 5px; }
+.mcw-p10{ padding: 10px; }
+.mcw-p5{ padding: 5px; }
+
+.mcw-to-center{ float:none; margin: 0 auto; }
+.mcw-pull-left{ float:left; }
+.mcw-pull-right{ float:right; }
+
+/* TEXT */
+.mcw-text-center{ text-align: center; }
+.mcw-text-left{ text-align: left; }
+.mcw-text-right{ text-align: right; }
+
+.mcw-row::before, .mcw-row::after{ content: " "; display: table; }
+.mcw-row::after{ clear: both; }
+.mcw-row {}
+
+.mcw-xs-1, .mcw-sm-1, .mcw-md-1, .mcw-lg-1,
+.mcw-xs-2, .mcw-sm-2, .mcw-md-2, .mcw-lg-2,
+.mcw-xs-3, .mcw-sm-3, .mcw-md-3, .mcw-lg-3,
+.mcw-xs-4, .mcw-sm-4, .mcw-md-4, .mcw-lg-4,
+.mcw-xs-5, .mcw-sm-5, .mcw-md-5, .mcw-lg-5,
+.mcw-xs-6, .mcw-sm-6, .mcw-md-6, .mcw-lg-6,
+.mcw-xs-7, .mcw-sm-7, .mcw-md-7, .mcw-lg-7,
+.mcw-xs-8, .mcw-sm-8, .mcw-md-8, .mcw-lg-8,
+.mcw-xs-9, .mcw-sm-9, .mcw-md-9, .mcw-lg-9,
+.mcw-xs-10, .mcw-sm-10, .mcw-md-10, .mcw-lg-10,
+.mcw-xs-11, .mcw-sm-11, .mcw-md-11, .mcw-lg-11,
+.mcw-xs-12, .mcw-sm-12, .mcw-md-12, .mcw-lg-12 {
+	position: relative;
+	min-height: 1px;
+}
+.mcw-xs-1, .mcw-xs-2, .mcw-xs-3, .mcw-xs-4, .mcw-xs-5, .mcw-xs-6, .mcw-xs-7, .mcw-xs-8, .mcw-xs-9, .mcw-xs-10, .mcw-xs-11, .mcw-xs-12 { float: left; }
+.mcw-xs-12 { width: 100%; }
+.mcw-xs-11 { width: 91.66666667%; }
+.mcw-xs-10 { width: 83.33333333%; }
+.mcw-xs-9 { width: 75%; }
+.mcw-xs-8 { width: 66.66666667%; }
+.mcw-xs-7 { width: 58.33333333%; }
+.mcw-xs-6 { width: 50%; }
+.mcw-xs-5 { width: 41.66666667%; }
+.mcw-xs-4 { width: 33.33333333%; }
+.mcw-xs-3 { width: 25%; }
+.mcw-xs-2 { width: 16.66666667%; }
+.mcw-xs-1 { width: 8.33333333%; }
+
+@media (min-width: 768px) {
+	.mcw-sm-1, .mcw-sm-2, .mcw-sm-3, .mcw-sm-4, .mcw-sm-5, .mcw-sm-6, .mcw-sm-7, .mcw-sm-8, .mcw-sm-9, .mcw-sm-10, .mcw-sm-11, .mcw-sm-12 { float: left; }
+	.mcw-sm-12 { width: 100%; }
+	.mcw-sm-11 { width: 91.66666667%; }
+	.mcw-sm-10 { width: 83.33333333%; }
+	.mcw-sm-9 { width: 75%; }
+	.mcw-sm-8 { width: 66.66666667%; }
+	.mcw-sm-7 { width: 58.33333333%; }
+	.mcw-sm-6 { width: 50%; }
+	.mcw-sm-5 { width: 41.66666667%; }
+	.mcw-sm-4 { width: 33.33333333%; }
+	.mcw-sm-3 { width: 25%; }
+	.mcw-sm-2 { width: 16.66666667%; }
+	.mcw-sm-1 { width: 8.33333333%; }
+}
+
+@media (min-width: 992px) {
+	.mcw-md-1, .mcw-md-2, .mcw-md-3, .mcw-md-4, .mcw-md-5, .mcw-md-6, .mcw-md-7, .mcw-md-8, .mcw-md-9, .mcw-md-10, .mcw-md-11, .mcw-md-12 { float: left; }
+	.mcw-md-12 { width: 100%; }
+	.mcw-md-11 { width: 91.66666667%; }
+	.mcw-md-10 { width: 83.33333333%; }
+	.mcw-md-9 { width: 75%; }
+	.mcw-md-8 { width: 66.66666667%; }
+	.mcw-md-7 { width: 58.33333333%; }
+	.mcw-md-6 { width: 50%; }
+	.mcw-md-5 { width: 41.66666667%; }
+	.mcw-md-4 { width: 33.33333333%; }
+	.mcw-md-3 { width: 25%; }
+	.mcw-md-2 { width: 16.66666667%; }
+	.mcw-md-1 { width: 8.33333333%; }
+}
+
+@media (min-width: 1200px) {
+	.mcw-lg-1, .mcw-lg-2, .mcw-lg-3, .mcw-lg-4, .mcw-lg-5, .mcw-lg-6, .mcw-lg-7, .mcw-lg-8, .mcw-lg-9, .mcw-lg-10, .mcw-lg-11, .mcw-lg-12 { float: left; }
+	.mcw-lg-12 { width: 100%; }
+	.mcw-lg-11 { width: 91.66666667%; }
+	.mcw-lg-10 { width: 83.33333333%; }
+	.mcw-lg-9 { width: 75%; }
+	.mcw-lg-8 { width: 66.66666667%; }
+	.mcw-lg-7 { width: 58.33333333%; }
+	.mcw-lg-6 { width: 50%; }
+	.mcw-lg-5 { width: 41.66666667%; }
+	.mcw-lg-4 { width: 33.33333333%; }
+	.mcw-lg-3 { width: 25%; }
+	.mcw-lg-2 { width: 16.66666667%; }
+	.mcw-lg-1 { width: 8.33333333%; }
+}

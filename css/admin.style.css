@@ -1,0 +1,29 @@
+/*
+	Plugin Name: Multiple Column Widget
+	Plugin URI: http://www.sanusiyaakub.org
+	Description: You will be able to put a list of posts in a single row
+	Author: Sanusi Yaakub (sanusi87@gmail.com)
+	Version: 0.1
+	Author URI: http://visitmeifyoulike.blogspot.com/
+*/
+/*
+admin stylesheet
+*/
+
+.mcw-admin-menu{
+	padding: 4px;
+}
+.mcw-admin-menu.mcw-admin-menu-active{
+
+}
+
+.mcw-control{ width:100%; line-height: 20px; }
+select.mcw-control{}
+input[type="text"].mcw-control{}
+input[type="checkbox"].mcw-control{}
+input[type="radio"].mcw-control{}
+textarea.mcw-control{}
+
+.typcn:before{
+	font-size: 1.2em !important;
+};
