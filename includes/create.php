@@ -61,6 +61,7 @@ function mcw_print_script(){
 			$('#main-post-list').empty();
 			
 			$.post( '$loadPostUrl',{type:t.val()}, function(response){
+				$('#main-post-list').append('<option value="">Select post...</option>');
 				$.each(response, function(i,e){
 					$('#main-post-list').append('<option value="'+e.ID+'">'+e.post_title+'</option>');
 				});

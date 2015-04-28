@@ -6,8 +6,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KWTZT
 Tags: multiple column, widget
 Requires at least: 3.9
 Tested up to: 3.9
-Version: 1.1.6
-Stable tag: 1.1.6
+Version: 1.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,7 +56,16 @@ Yes. We do accept donation.
 = 1.1.6 =
 * fix fix initial widget create javascript link binding
 
+= 1.2 =
+* enable user to select their featured image
+* add settings page
+
 == Upgrade Notice ==
 
 = 1.0 =
 First commit
+
+= 1.2 =
+* enable user to select their featured image instead of manually insert them into the post
+* add settings page for user to change the featured image size
+* enable user to show/hide their post title in the widget
