@@ -10,6 +10,13 @@
 
 class MultiColumnWidgetDb{
 
+	public static $allThumbnailSize = array(
+		'thumbnail' => 'Thumbnail',
+		'medium' => 'Medium',
+		'large' => 'Large',
+		'full' => 'Full'
+	);
+
 	public static function listOfPostTypes(){
 		global $wpdb;
 		$queryStr = "SELECT DISTINCT $wpdb->posts.post_type FROM $wpdb->posts WHERE $wpdb->posts.post_status = 'publish'";

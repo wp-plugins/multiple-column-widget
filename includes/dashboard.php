@@ -84,6 +84,11 @@ if( count( $widgets ) > 0 ){
 			<td>:</td>
 			<td>(0|1) whether to show the post title or not, default 1</td>
 		</tr>
+		<tr>
+			<td><strong>usefeaturedimage</strong></td>
+			<td>:</td>
+			<td>(0|1) whether to show the post featured images or not, default 0</td>
+		</tr>
 	</table>
 </div>
 

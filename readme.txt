@@ -1,12 +1,13 @@
 === Multiple Column Widget ===
-Contributors: system@damakhijau.com,sanusi87@gmail.com
+Contributors: system@damakhijau.com,sanusi87@gmail.com, damaksystem@gmail.com
 Author URI: http://system.damakhijau.com
 Plugin URL: http://system.damakhijau.com/multiple-column-widget/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KWTZTPV9JRLD8&item_name=multicolumnwidget&item_number=multic
 Tags: multiple column, widget
-Requires at least: 3.4
-Tested up to: 3.4
-Stable tag: 4.3
+Requires at least: 3.9
+Tested up to: 3.9
+Version: 1.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +15,7 @@ You will be able to put a list of posts in a single row
 
 == Description ==
 
-This widget helps you to put posts (defined by this widget) in a row. The width for each post will be divided evenly with the total number of post you have selected during the creation of widget.
+This widget helps you to put posts in a row. The width for each post will be divided evenly with the total number of post you have selected during the creation of widget.
 
 == Installation ==
 
@@ -45,7 +46,26 @@ Yes. We do accept donation.
 = 1.0 =
 * First commit
 
+= 1.1 = 
+* User are now able to choose any posts which was previously created to be put inside the widget, not just the widget's specific post type
+* shortcode is also availabel in case user wants to put the widget inside page or post
+
+= 1.1.5 =
+* fix fix initial widget create javascript link binding
+
+= 1.1.6 =
+* fix fix initial widget create javascript link binding
+
+= 1.2 =
+* enable user to select their featured image
+* add settings page
+
 == Upgrade Notice ==
 
 = 1.0 =
 First commit
+
+= 1.2 =
+* enable user to select their featured image instead of manually insert them into the post
+* add settings page for user to change the featured image size
+* enable user to show/hide their post title in the widget
