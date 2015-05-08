@@ -1,13 +1,4 @@
 <?php
-/*
-	Plugin Name: Multiple Column Widget
-	Plugin URI: http://www.sanusiyaakub.org
-	Description: You will be able to put a list of posts in a single row
-	Author: Sanusi Yaakub (sanusi87@gmail.com)
-	Version: 0.1
-	Author URI: http://visitmeifyoulike.blogspot.com/
-*/
-
 #user scripts and styles
 function multiUserCss(){
 	wp_enqueue_style( 'multi_user_style', plugins_url( MULTIC.'/style.css' ) );
@@ -48,10 +39,11 @@ add_action( 'admin_menu', 'multi_column_widget' );
 
 /* shortcode to be placed on page */
 function multiple_column_widget_shortcode( $attrs ){
-	
+	echo "xxx-yyy";
 	$shortcodeParam = array();
 	$shortcodeParam['selectedwidget'] = 0;
 	$shortcodeParam['showposttitle'] = 1;
+	$shortcodeParam['usefeaturedimage'] = 0;
 
 	$instance = shortcode_atts( $shortcodeParam, $attrs, 'multic' );
 
@@ -71,6 +63,13 @@ function multiple_column_widget_shortcode( $attrs ){
 				<?php if( $instance['showposttitle'] ): ?>
 				<h3 class="mcw-text-center"><?php echo $post->post_title; ?></h3>
 				<?php endif; ?>
+
+				<?php
+				if( $instance['usefeaturedimage'] ){
+					echo get_the_post_thumbnail( $post->ID, get_option( 'mcw_thumbnail_size' ) );
+				}
+				?>
+
 				<div><?php echo $post->post_content; ?></div>
 			</div>
 		</div>
@@ -174,6 +173,28 @@ if( isset( $_POST ) && !empty( $_POST ) ){
 		}else{
 			$result['code'] = 0;
 			$result['text'] = 'Failed to delete widget!';
+		}
+
+		if( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ){
+			header('Content-Type: application/json');
+			echo json_encode( $result );
+			exit;
+		}
+	}elseif( $currentPage == 'settings' ){
+		$thumbnailSize = $_POST['thumbnail-size'];
+
+		if( !array_key_exists( $thumbnailSize, MultiColumnWidgetDb::$allThumbnailSize ) ){
+			$thumbnailSize = 'medium';
+		}
+		
+		$saved = update_option( 'mcw_thumbnail_size', $thumbnailSize );
+
+		if( $saved ){
+			$result['code'] = 1;
+			$result['text'] = 'Settings has been updated!';
+		}else{
+			$result['code'] = 0;
+			$result['text'] = 'Failed to update settings!';
 		}
 
 		if( $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' ){
