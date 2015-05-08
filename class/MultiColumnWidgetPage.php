@@ -26,6 +26,10 @@ class MultiColumnWidgetPage{
 			'create' => array(
 				'title' => 'Create Widget',
 				'url' => '&p=create'
+			),
+			'settings' => array(
+				'title' => 'Settings',
+				'url' => '&p=settings'
 			)
 		);
 

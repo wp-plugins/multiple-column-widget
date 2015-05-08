@@ -1,14 +1,12 @@
 <?php
-/*
-	Plugin Name: Multiple Column Widget
-	Plugin URI: http://www.sanusiyaakub.org
-	Description: You will be able to put a list of posts in a single row
-	Author: Sanusi Yaakub (sanusi87@gmail.com)
-	Version: 0.1
-	Author URI: http://visitmeifyoulike.blogspot.com/
-*/
-
 class MultiColumnWidgetDb{
+
+	public static $allThumbnailSize = array(
+		'thumbnail' => 'Thumbnail',
+		'medium' => 'Medium',
+		'large' => 'Large',
+		'full' => 'Full'
+	);
 
 	public static function listOfPostTypes(){
 		global $wpdb;
