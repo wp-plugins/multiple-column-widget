@@ -1,13 +1,4 @@
 <?php
-/*
-	Plugin Name: Multiple Column Widget
-	Plugin URI: http://www.sanusiyaakub.org
-	Description: You will be able to put a list of posts in a single row
-	Author: Sanusi Yaakub (sanusi87@gmail.com)
-	Version: 0.1
-	Author URI: http://visitmeifyoulike.blogspot.com/
-*/
-
 function mcw_print_script(){
 	$js = <<<PHP
 	<script type="text/javascript">
@@ -59,7 +50,7 @@ if( count( $widgets ) > 0 ){
 	</div>
 
 	<div class="mcw-md-4 mcw-sm-4 mcw-xs-12">
-		<div class="mcw-p5">[multic selected-widget="<?php echo $widgetId; ?>"]</div>
+		<div class="mcw-p5">[multic selectedwidget="<?php echo $widgetId; ?>"]</div>
 	</div>
 	
 	<div class="mcw-md-4 mcw-sm-4 mcw-xs-12">

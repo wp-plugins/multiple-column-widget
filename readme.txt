@@ -1,13 +1,13 @@
 === Multiple Column Widget ===
-Contributors: system@damakhijau.com,sanusi87@gmail.com, damaksystem@gmail.com
+Contributors: sanusi87@gmail.com, damaksystem@gmail.com
 Author URI: http://system.damakhijau.com
 Plugin URL: http://system.damakhijau.com/multiple-column-widget/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KWTZTPV9JRLD8&item_name=multicolumnwidget&item_number=multic
 Tags: multiple column, widget
 Requires at least: 3.9
 Tested up to: 3.9
-Version: 1.2
-Stable tag: 1.2
+Version: 1.2.1
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,15 @@ Yes. We do accept donation.
 
 1. 3 items/columns in a row
 2. 4 items/columns in a row, the third item was purposely left blank
+3. step 1: a new menu item, post type were generated
+4. step 2: create a new plugin specific post
+5. step 3: visit widget dashboard
+6. step 4: create a new widget
+7. step 5: select x column and assign post to each column
+8. step 6: copy the shortcode and paste it into any page/post
+9. step 7: or use the appearance->widget panel to assign the widget to any header/footer/sidebar etc
+10. step 8: pasting shortcode into a page
+11. step 9: sampel result
 
 == Changelog ==
 
@@ -59,6 +68,9 @@ Yes. We do accept donation.
 = 1.2 =
 * enable user to select their featured image
 * add settings page
+
+= 1.2.1 =
+* fix bug on the generated shortcode
 
 == Upgrade Notice ==
 

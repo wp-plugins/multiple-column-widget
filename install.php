@@ -4,7 +4,7 @@
 	Plugin URI: http://www.sanusiyaakub.org
 	Description: You will be able to put a list of posts in a single row
 	Author: Sanusi Yaakub (sanusi87@gmail.com)
-	Version: 1.2
+	Version: 1.2.1
 	Author URI: http://visitmeifyoulike.blogspot.com/
 */
 

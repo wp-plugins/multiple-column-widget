@@ -1,13 +1,4 @@
 <?php
-/*
-	Plugin Name: Multiple Column Widget
-	Plugin URI: http://www.sanusiyaakub.org
-	Description: You will be able to put a list of posts in a single row
-	Author: Sanusi Yaakub (sanusi87@gmail.com)
-	Version: 0.1
-	Author URI: http://visitmeifyoulike.blogspot.com/
-*/
-
 #user scripts and styles
 function multiUserCss(){
 	wp_enqueue_style( 'multi_user_style', plugins_url( MULTIC.'/style.css' ) );
@@ -48,7 +39,7 @@ add_action( 'admin_menu', 'multi_column_widget' );
 
 /* shortcode to be placed on page */
 function multiple_column_widget_shortcode( $attrs ){
-	
+	echo "xxx-yyy";
 	$shortcodeParam = array();
 	$shortcodeParam['selectedwidget'] = 0;
 	$shortcodeParam['showposttitle'] = 1;
