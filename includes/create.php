@@ -4,7 +4,7 @@ $column = array();
 
 if( !empty( $id ) ){
 	$theWidget = MultiColumnWidgetDb::getWidget( $id );
-	//var_dump($theWidget);
+	
 	foreach ($theWidget as $id => $widget) {
 		$widgetId = $id;
 		$widgetName = $widget['name'];
@@ -31,25 +31,13 @@ function mcw_print_script(){
 			for( var i=0;i<tv;i++ ){
 				var x = '<p><a href="#" class="set-post">Set Post</a><br />Post: <span class="setted-post">None</span></p>',
 				classString = 'mcw-lg-'+separator+' mcw-md-'+separator+' mcw-sm-'+separator+' mcw-xs-12';
-				$('#sampel-output').append( x ).children(':last').wrap('<div class="'+classString+'" />').wrap('<div class="mcw-p5" />');
+				$('#sampel-output').append( x ).children(':last').wrap('<div class="'+classString+'" />').wrap('<div class="mcw-p5" />').parent().after('<div class="mcw-p10" style="display:none;"><input type="hidden" name="selected-post[]" class="select-post" value="" /></div>');
 			}
+
+			$('#sampel-output').find('.mcw-p5').each(function(i,e){
+				$(e).bindSelectPost();
+			});
 		});
-
-		/*
-		$('#column-count').change(function(){
-			var tv = $(this).val(),
-			mpost = $('#main-post-list').clone().show().removeAttr('id');
-
-			$('#sampel-output').empty();
-
-			var separator = 12/tv;
-			for( var i=0;i<tv;i++ ){
-				var x = mpost.clone(),
-				classString = 'mcw-lg-'+separator+' mcw-md-'+separator+' mcw-sm-'+separator+' mcw-xs-12';
-				$('#sampel-output').append( x ).children(':last').wrap('<div class="'+classString+'" />').wrap('<div class="mcw-p5" />');
-			}
-		});
-		*/
 
 		$('#widget-create-form').submit(function(){
 			var t = $(this),
@@ -73,6 +61,7 @@ function mcw_print_script(){
 			$('#main-post-list').empty();
 			
 			$.post( '$loadPostUrl',{type:t.val()}, function(response){
+				$('#main-post-list').append('<option value="">Select post...</option>');
 				$.each(response, function(i,e){
 					$('#main-post-list').append('<option value="'+e.ID+'">'+e.post_title+'</option>');
 				});
@@ -91,21 +80,12 @@ function mcw_print_script(){
 		$.fn.bindSelectPost = function(){
 			var t = $(this);
 
-			t.click(function(){
+			t.find('a').click(function(){
 				t.hide();
 				t.next().show().append( $('#main-post-list').show() );
 				return false;
 			});
 
-			/*
-			t.hover(function(){
-				t.hide();
-				t.next().show().append( $('#main-post-list').show() );
-			}, function(){
-				t.show();
-				$('#widget-create-form').after( $('#main-post-list').hide() );
-			});
-			*/
 			return t;
 		}
 
@@ -184,14 +164,14 @@ add_action( 'admin_print_footer_scripts', 'mcw_print_script' );
 	<div class="mcw-row" id="sampel-output">
 		<div class="mcw-md-12 mcw-sm-12 mcw-xs-12">
 			<div class="mcw-p5">
-				<select name="selected-post[]" class="select-post mcw-control">
-					<option value="">Select post</option>
-					<?php foreach( $listOfPosts as $i => $post ){ ?>
-					<option value="<?php echo $post->ID; ?>"><?php echo $post->post_title; ?></option>
-					<?php } ?>
-				</select>
+				<p>
+					<a href="#" class="set-post">Set Post</a>
+					<br />Post: <strong class="setted-post"><?php echo $post['post_title']; ?></strong>
+				</p>
 			</div>
-			<div class="mcw-p10" style="display:none;"></div>
+			<div class="mcw-p10" style="display:none;">
+				<input type="hidden" name="selected-post[]" class="select-post" value="" />
+			</div>
 		</div>
 	</div>
 	<?php }else{ ?>
@@ -206,14 +186,6 @@ add_action( 'admin_print_footer_scripts', 'mcw_print_script' );
 					<a href="#" class="set-post">Set Post</a>
 					<br />Post: <strong class="setted-post"><?php echo $post['post_title']; ?></strong>
 				</p>
-				<?php /* ?>
-				<select name="selected-post[]" class="select-post mcw-control">
-					<option value="">Select post</option>
-					<?php foreach( $listOfPosts as $i => $post ){ ?>
-					<option value="<?php echo $post->ID; ?>"<?php echo $post->ID == $postId ? ' selected="selected"' : ''; ?>><?php echo $post->post_title; ?></option>
-					<?php } ?>
-				</select>
-				<?php */ ?>
 			</div>
 			<div class="mcw-p10" style="display:none;">
 				<input type="hidden" name="selected-post[]" class="select-post" value="<?php echo $post['post_id']; ?>" />

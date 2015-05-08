@@ -48,7 +48,16 @@ class MultiColumnWidget extends WP_Widget {
 		?>
 			<div class="mcw-md-<?php echo $separator; ?> mcw-sm-<?php echo $separator; ?> mcw-xs-12">
 				<div class="mcw-p5">
-					<h3<?php echo $instance['use-post-title'] ? ' class="widget-title mcw-text-center"': ''; ?>><?php echo $post->post_title; ?></h3>
+
+					<?php if( $instance['show-post-title'] ){ ?>
+					<h3 class="widget-title mcw-text-center"><?php echo $post->post_title; ?></h3>
+					<?php
+					}
+
+					if( $instance['show-featured-image'] ){
+						echo get_the_post_thumbnail( $post->ID, get_option( 'mcw_thumbnail_size' ) );
+					}
+					?>
 					<div><?php echo $post->post_content; ?></div>
 				</div>
 			</div>
@@ -76,7 +85,6 @@ class MultiColumnWidget extends WP_Widget {
 		$widgets = MultiColumnWidgetDb::getWidget();
 
 		// Widget admin form
-		// var_dump($instance);
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
@@ -96,12 +104,26 @@ class MultiColumnWidget extends WP_Widget {
 			</select>
 		</p>
 
+		<?php /* ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('use-post-title'); ?>">Use Post Title</label>
 			<input type="checkbox" id="<?php echo $this->get_field_id('use-post-title'); ?>" name="<?php echo $this->get_field_name('use-post-title'); ?>" value="1"<?php echo $instance['use-post-title'] ? ' checked="checked"' : ''; ?> />
 			<br />
 			<small>Use post title to replace default widget title.</small>
+		</p><?php */ ?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('show-post-title'); ?>">Show Post Title</label>
+			<input type="checkbox" id="<?php echo $this->get_field_id('show-post-title'); ?>" name="<?php echo $this->get_field_name('show-post-title'); ?>" value="1"<?php echo $instance['show-post-title'] ? ' checked="checked"' : ''; ?> />
+			<br />
 		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('show-featured-image'); ?>">Show Featured Image</label>
+			<input type="checkbox" id="<?php echo $this->get_field_id('show-featured-image'); ?>" name="<?php echo $this->get_field_name('show-featured-image'); ?>" value="1"<?php echo $instance['show-featured-image'] ? ' checked="checked"' : ''; ?> />
+			<br />
+		</p>
+
 		<?php
 	}
 	
@@ -110,7 +132,9 @@ class MultiColumnWidget extends WP_Widget {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		$instance['selected-widget'] = $new_instance['selected-widget'];
-		$instance['use-post-title'] = $new_instance['use-post-title'];
+		//$instance['use-post-title'] = $new_instance['use-post-title'];
+		$instance['show-post-title'] = $new_instance['show-post-title'];
+		$instance['show-featured-image'] = $new_instance['show-featured-image'];
 
 		return $instance;
 	}
